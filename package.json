@@ -1,0 +1,43 @@
+{
+  "name": "lol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/main.js",
+  "scripts": {
+    "clean": "rimraf dist .cache",
+    "build:server": "parcel build server/index.js --target node",
+    "build:app": "parcel build public/index.html --out-dir dist/app --target browser",
+    "watch:server": "parcel watch server/index.js --target node",
+    "start:app": "parcel --port 51300 public/index.html --out-dir dist/app",
+    "start:server": "env-cmd nodemon dist/index.js",
+    "start:electron": "electron .",
+    "start": "npm-run-all clean build:server build:app --parallel watch:server start:app start:server start:electron"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.10.4",
+    "@material-ui/core": "^4.11.0",
+    "axios": "^0.19.2",
+    "electron": "^9.1.0",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
+    "ramda": "^0.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.10.4",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^1.12.4",
+    "rimraf": "^3.0.2"
+  }
+}
