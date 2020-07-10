@@ -10,19 +10,20 @@ function createWindow() {
 	});
 
 	win.loadURL("http://localhost:3000");
-    win.webContents.openDevTools();
-    win.webContents.enableDeviceEmulation({
-        screenPosition: "mobile",
-        screenSize: { width: 375, height: 667 }
-    });
+	win.webContents.openDevTools();
+	win.webContents.enableDeviceEmulation({
+		screenPosition: "mobile",
+		screenSize: { width: 375, height: 667 },
+  });
+  console.log("ID ", win.id);
 }
 
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
 	if (process.platform !== "darwin") {
-        app.quit();
-        process.exit(0);
+		app.quit();
+		process.exit(0);
 	}
 });
 

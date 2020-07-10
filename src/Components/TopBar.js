@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
-import { PlaceholderText } from 'Components/Placeholder';
+import PlaceholderText from "Components/Placeholder";
 
 const TopBar = ({ children }) => (
 	<AppBar position="sticky">
@@ -17,9 +17,7 @@ const TopBar = ({ children }) => (
 						<PlaceholderText width="60%" marginTop={0} />
 					</Box>
 				</Box>
-                <Box>
-                    {children}
-                </Box>
+				<Box>{children}</Box>
 			</Container>
 		</Toolbar>
 	</AppBar>

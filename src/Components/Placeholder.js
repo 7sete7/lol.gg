@@ -6,4 +6,4 @@ const PlaceholderText = ({ width = 1, height = "7px", ...props }) => (
     <Box bgcolor={bgColor}  width={width} height={height} marginX="3px" marginY="5px" borderRadius="1px" {...props} />
 );
 
-export { PlaceholderText };
+export default PlaceholderText;
